@@ -16,7 +16,7 @@ class AppPreference @Inject constructor(
     }
 
     override fun getUserName(key: String): String? {
-        TODO("Not yet implemented")
+        return null
     }
 
 }
