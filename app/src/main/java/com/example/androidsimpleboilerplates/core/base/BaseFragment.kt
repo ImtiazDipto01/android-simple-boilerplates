@@ -48,7 +48,6 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
     open fun init(savedInstanceState: Bundle?) {
         configureViews()
         configureViews(savedInstanceState)
-
     }
 
     fun navigateTo(

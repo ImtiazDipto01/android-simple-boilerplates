@@ -1,8 +1,6 @@
 package com.example.androidsimpleboilerplates.presentation
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.androidsimpleboilerplates.R
 import com.example.androidsimpleboilerplates.core.base.BaseActivity
 import com.example.androidsimpleboilerplates.databinding.ActivityMainBinding
 
