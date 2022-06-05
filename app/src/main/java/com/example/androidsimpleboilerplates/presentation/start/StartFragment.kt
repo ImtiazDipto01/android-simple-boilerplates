@@ -14,9 +14,11 @@ import com.example.androidsimpleboilerplates.core.base.BaseFragment
 import com.example.androidsimpleboilerplates.core.extensions.Resource
 import com.example.androidsimpleboilerplates.databinding.FragmentStartBinding
 import com.example.androidsimpleboilerplates.domain.model.PicInfo
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import timber.log.Timber
 
+@AndroidEntryPoint
 class StartFragment : BaseFragment<FragmentStartBinding>() {
 
     override fun getViewBinding(): FragmentStartBinding = FragmentStartBinding.inflate(layoutInflater)
