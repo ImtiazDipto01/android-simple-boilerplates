@@ -44,6 +44,8 @@ class UsersAdapter : RecyclerView.Adapter<UsersAdapter.MyViewHolder>() {
 
     override fun getItemCount(): Int = differ.currentList.size
 
+    fun submitList(list: List<GithubUser>) = differ.submitList(list)
+
     inner class MyViewHolder(binding: ItemUsersBinding) : RecyclerView.ViewHolder(binding.root) {
         private val _binding: ItemUsersBinding = binding
 
@@ -58,7 +60,7 @@ class UsersAdapter : RecyclerView.Adapter<UsersAdapter.MyViewHolder>() {
                     .priority(Priority.HIGH)
 
                 Glide.with(imgUser)
-                    .load(user.url)
+                    .load(user.avatarUrl)
                     .apply(options)
                     .into(imgUser)
             }

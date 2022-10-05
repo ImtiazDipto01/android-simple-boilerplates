@@ -1,5 +1,6 @@
 package com.example.androidsimpleboilerplates.core.di
 
+import com.example.androidsimpleboilerplates.data.mapper.GithubUserMapper
 import com.example.androidsimpleboilerplates.data.remote.repository.UsersRepositoryImp
 import com.example.androidsimpleboilerplates.data.remote.service.ApiService
 import com.example.androidsimpleboilerplates.domain.repository.UsersRepository
@@ -15,6 +16,6 @@ object RepositoryModule {
 
     @Provides
     @Singleton
-    fun providePicInfoRepository(service: ApiService): UsersRepository =
-        UsersRepositoryImp(service)
+    fun provideUsersRepository(service: ApiService, mapper: GithubUserMapper): UsersRepository =
+        UsersRepositoryImp(service, mapper)
 }

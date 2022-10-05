@@ -1,15 +1,15 @@
 package com.example.androidsimpleboilerplates.core.di
 
-import com.example.androidsimpleboilerplates.core.extensions.CONNECT_TIMEOUT_S
-import com.example.androidsimpleboilerplates.core.extensions.READ_TIMEOUT_S
-import com.example.androidsimpleboilerplates.core.extensions.WRITE_TIMEOUT_S
+import com.example.androidsimpleboilerplates.core.extensions.*
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import okhttp3.Interceptor
 import okhttp3.OkHttpClient
+import okhttp3.Request
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -37,11 +37,18 @@ object NetworkModule {
     fun provideOkHttpClient(
         httpLoggingInterceptor: HttpLoggingInterceptor
     ): OkHttpClient {
-        val httpClient = OkHttpClient.Builder()
-        httpClient.addInterceptor(httpLoggingInterceptor)
-        httpClient.connectTimeout(CONNECT_TIMEOUT_S, TimeUnit.SECONDS)
-        httpClient.readTimeout(READ_TIMEOUT_S, TimeUnit.SECONDS)
-        httpClient.writeTimeout(WRITE_TIMEOUT_S, TimeUnit.SECONDS)
+        val httpClient = OkHttpClient.Builder().apply {
+            connectTimeout(CONNECT_TIMEOUT_S, TimeUnit.SECONDS)
+            readTimeout(READ_TIMEOUT_S, TimeUnit.SECONDS)
+            writeTimeout(WRITE_TIMEOUT_S, TimeUnit.SECONDS)
+            addInterceptor(httpLoggingInterceptor)
+            addInterceptor(Interceptor {
+                val newRequest: Request = it.request().newBuilder()
+                    .addHeader(HEADER_AUTHORIZATION, "$HEADER_AUTHORIZATION_TYPE $AUTH_TOKEN")
+                    .build()
+                it.proceed(newRequest)
+            })
+        }
         return httpClient.build()
     }
 
