@@ -1,8 +1,8 @@
 package com.example.androidsimpleboilerplates.core.di
 
-import com.example.androidsimpleboilerplates.data.remote.repository.PicInfoRepositoryImp
+import com.example.androidsimpleboilerplates.data.remote.repository.UsersRepositoryImp
 import com.example.androidsimpleboilerplates.data.remote.service.ApiService
-import com.example.androidsimpleboilerplates.domain.repository.PicInfoRepository
+import com.example.androidsimpleboilerplates.domain.repository.UsersRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,6 +15,6 @@ object RepositoryModule {
 
     @Provides
     @Singleton
-    fun providePicInfoRepository(service: ApiService): PicInfoRepository =
-        PicInfoRepositoryImp(service)
+    fun providePicInfoRepository(service: ApiService): UsersRepository =
+        UsersRepositoryImp(service)
 }
