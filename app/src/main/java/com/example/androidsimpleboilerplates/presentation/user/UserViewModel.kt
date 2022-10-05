@@ -1,4 +1,4 @@
-package com.example.androidsimpleboilerplates.presentation.start
+package com.example.androidsimpleboilerplates.presentation.user
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

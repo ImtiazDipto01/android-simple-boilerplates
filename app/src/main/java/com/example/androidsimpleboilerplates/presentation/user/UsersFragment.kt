@@ -1,4 +1,4 @@
-package com.example.androidsimpleboilerplates.presentation.start
+package com.example.androidsimpleboilerplates.presentation.user
 
 import android.os.Bundle
 import android.view.LayoutInflater
