@@ -36,7 +36,7 @@ class UsersFragment : Fragment() {
 
     private fun observePicInfo() {
         lifecycleScope.launchWhenStarted {
-            viewModel.picInfoFlow.collect {
+            viewModel.usersFlow.collect {
                 when (it) {
                     is Resource.Loading -> {
                         _binding.pbLoading.isVisible = true
