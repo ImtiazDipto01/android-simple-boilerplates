@@ -1,17 +1,19 @@
 package com.example.androidsimpleboilerplates.presentation
 
 import android.os.Bundle
-import com.example.androidsimpleboilerplates.core.base.BaseActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.example.androidsimpleboilerplates.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class MainActivity : BaseActivity<ActivityMainBinding>() {
+class MainActivity : AppCompatActivity() {
 
-    override fun getViewBinding(): ActivityMainBinding = ActivityMainBinding.inflate(layoutInflater)
-    override fun getActivityName(): String = javaClass.simpleName
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
     }
 }
