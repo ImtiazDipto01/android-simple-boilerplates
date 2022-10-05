@@ -42,12 +42,12 @@ object NetworkModule {
             readTimeout(READ_TIMEOUT_S, TimeUnit.SECONDS)
             writeTimeout(WRITE_TIMEOUT_S, TimeUnit.SECONDS)
             addInterceptor(httpLoggingInterceptor)
-            addInterceptor(Interceptor {
+            /*addInterceptor(Interceptor {
                 val newRequest: Request = it.request().newBuilder()
                     .addHeader(HEADER_AUTHORIZATION, "$HEADER_AUTHORIZATION_TYPE $AUTH_TOKEN")
                     .build()
                 it.proceed(newRequest)
-            })
+            })*/
         }
         return httpClient.build()
     }
