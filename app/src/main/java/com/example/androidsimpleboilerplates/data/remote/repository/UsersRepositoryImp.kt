@@ -3,7 +3,6 @@ package com.example.androidsimpleboilerplates.data.remote.repository
 import com.example.androidsimpleboilerplates.core.extensions.Resource
 import com.example.androidsimpleboilerplates.core.extensions.safeApiCall
 import com.example.androidsimpleboilerplates.data.mapper.GithubUserMapper
-import com.example.androidsimpleboilerplates.data.remote.dto.GithubUserResponse
 import com.example.androidsimpleboilerplates.data.remote.service.ApiService
 import com.example.androidsimpleboilerplates.domain.model.GithubUser
 import com.example.androidsimpleboilerplates.domain.repository.UsersRepository
