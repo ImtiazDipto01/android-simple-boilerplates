@@ -40,7 +40,6 @@ class StartFragment : BaseFragment<FragmentStartBinding>() {
                     }
                     is Resource.Success -> {
                         Timber.e("LoginFragment: ${it.data}")
-                        updateUi(false, it.data)
                     }
                     is Resource.Error -> {
                         Timber.e("LoginFragment: ${it.throwable.message ?: ""}")
