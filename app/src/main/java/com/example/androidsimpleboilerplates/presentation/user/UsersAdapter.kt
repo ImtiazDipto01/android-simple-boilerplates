@@ -11,7 +11,7 @@ import com.bumptech.glide.load.resource.bitmap.FitCenter
 import com.bumptech.glide.request.RequestOptions
 import com.example.androidsimpleboilerplates.R
 import com.example.androidsimpleboilerplates.databinding.ItemUsersBinding
-import com.example.androidsimpleboilerplates.domain.model.GithubUser
+import com.example.androidsimpleboilerplates.data.local.db.entity.GithubUser
 
 class UsersAdapter : RecyclerView.Adapter<UsersAdapter.MyViewHolder>() {
 

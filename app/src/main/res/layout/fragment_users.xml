@@ -6,6 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".presentation.user.UsersFragment">
 
+
     <ProgressBar
         android:id="@+id/pbLoading"
         android:layout_width="50dp"

@@ -1,5 +1,6 @@
 package com.example.androidsimpleboilerplates.core.di
 
+import com.example.androidsimpleboilerplates.data.local.db.dao.UserDao
 import com.example.androidsimpleboilerplates.data.mapper.GithubUserMapper
 import com.example.androidsimpleboilerplates.data.remote.repository.UsersRepositoryImp
 import com.example.androidsimpleboilerplates.data.remote.service.ApiService
@@ -16,6 +17,6 @@ object RepositoryModule {
 
     @Provides
     @Singleton
-    fun provideUsersRepository(service: ApiService, mapper: GithubUserMapper): UsersRepository =
-        UsersRepositoryImp(service, mapper)
+    fun provideUsersRepository(service: ApiService, mapper: GithubUserMapper, dao: UserDao): UsersRepository =
+        UsersRepositoryImp(service, mapper, dao)
 }

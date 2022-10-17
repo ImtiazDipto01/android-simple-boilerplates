@@ -5,6 +5,7 @@ import android.util.Log.e
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -56,6 +57,7 @@ class UsersFragment : Fragment() {
                     }
                     is Resource.Error -> {
                         _binding.pbLoading.isVisible = false
+                        Toast.makeText(requireContext(), it.error.msg, Toast.LENGTH_SHORT).show()
                     }
                     else -> Unit
                 }

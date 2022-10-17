@@ -13,4 +13,5 @@ const val READ_TIMEOUT_S: Long = 60
 const val WRITE_TIMEOUT_S: Long = 60
 
 const val APP_PREF = "Android_Pref"
+const val APP_DB = "app_db"
 const val AUTH_TOKEN = "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"
