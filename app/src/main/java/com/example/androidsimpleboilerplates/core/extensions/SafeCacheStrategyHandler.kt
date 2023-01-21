@@ -37,7 +37,17 @@ abstract class SafeCacheStrategyHandler<RESULT, REQUEST> {
             }
         )
 
-    }.flowOn(Dispatchers.IO).catch { exp -> emit(Resource.Error(getCustomErrorMessage(exp))) }
+    }.flowOn(Dispatchers.IO).catch { exp ->
+        // Emit Error state
+        emit(Resource.Error(getCustomErrorMessage(exp)))
+
+        // Emit Database content
+        emitAll(
+            fetchLocalData().map {
+                Resource.Success(it)
+            }
+        )
+    }
 
 
     /**

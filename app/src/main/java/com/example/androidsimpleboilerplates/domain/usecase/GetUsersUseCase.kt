@@ -10,5 +10,5 @@ class GetUsersUseCase @Inject constructor(
     private val repository: UsersRepository
 ) {
     suspend fun execute(since: Int): Flow<Resource<List<GithubUser>>> =
-        repository.getUsers(since)
+        repository.getUsersFromLocal(since)
 }

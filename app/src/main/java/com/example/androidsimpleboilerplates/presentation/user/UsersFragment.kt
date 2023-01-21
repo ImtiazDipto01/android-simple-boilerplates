@@ -57,7 +57,7 @@ class UsersFragment : Fragment() {
                     }
                     is Resource.Error -> {
                         _binding.pbLoading.isVisible = false
-                        Toast.makeText(requireContext(), it.error.msg, Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireContext(), it.err.msg, Toast.LENGTH_SHORT).show()
                     }
                     else -> Unit
                 }
