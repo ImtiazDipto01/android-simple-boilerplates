@@ -1,7 +1,7 @@
 package com.example.androidsimpleboilerplates.core.extensions
 
+import android.util.MalformedJsonException
 import com.google.gson.Gson
-import com.google.gson.stream.MalformedJsonException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -79,7 +79,7 @@ fun getCustomErrorMessage(error: Throwable): ErrorHandler {
             "Oh! We couldn't capture your request in time. Please try again.",
             error
         )
-        is android.util.MalformedJsonException -> ErrorHandler(
+        is MalformedJsonException -> ErrorHandler(
             "Oh! We hit an error. Try again later.",
             error
         )
